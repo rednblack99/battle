@@ -12,5 +12,11 @@ feature 'Testing infrastructure' do
     expect(page).to have_content "player 1 = Adam"
     expect(page).to have_content "player 2 = Simon"
   end
+end
 
+feature "Viewing HP" do
+  scenario "As player 1, I can see player 2's HP" do
+    visit("/play")
+    expect(page).to have_content "Player 2 HP: 100"
+  end
 end
